@@ -58,7 +58,7 @@ x_test_noisy = x_test_scaled + noise_factor * np.random.normal(loc=0.0, scale=1.
 x_train_noisy = np.clip(x_train_noisy, 0., 1.)
 x_test_noisy = np.clip(x_test_noisy, 0., 1.)
 
-n = 10
+n = 3
 plt.figure(figsize=(20, 2))
 for i in range(1, n + 1):
     ax = plt.subplot(1, n, i)
@@ -96,7 +96,7 @@ autoencoder.fit(x_train_noisy, x_train_scaled,
 ### Predict the noisy added test data
 ```
 decoded_imgs = autoencoder.predict(x_test_noisy)
-n = 10
+n = 3
 plt.figure(figsize=(20, 4))
 for i in range(1, n + 1):
     # Display original
